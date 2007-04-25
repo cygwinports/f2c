@@ -1,0 +1,25 @@
+DESCRIPTION="Fortran to C compiler"
+HOMEPAGE="http://www.netlib.org/f2c/"
+SRC_URI="ftp://netlib.bell-labs.com/netlib/f2c/src.tar"
+SRC_DIR="src"
+
+USE_MANAGED_MOUNT=1
+
+src_compile() {
+	lndirs
+	cd ${B}
+
+	for f in *.gz
+	do
+		gunzip -c ${f} > ${f%.gz} || error "gunzip ${f} failed"
+	done
+
+	cygmake -f makefile.u CFLAGS="${CFLAGS}"
+}
+
+src_install() {
+	cd ${B}
+	dobin f2c.exe
+	dodoc Notice README
+	newman f2c.1t f2c.1
+}

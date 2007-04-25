@@ -1,0 +1,4 @@
+category: Devel
+requires: cygwin libf2c
+sdesc: "Fortran to C compiler"
+ldesc: "Fortran to C compiler"
