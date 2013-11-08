@@ -1,6 +1,0 @@
-category: Devel
-requires: libf2c
-sdesc: "Fortran to C compiler"
-ldesc: "F2c converts Fortran 77 source code in files with names ending 
-in '.f' or '.F' to C (or C++) source files in the current directory, 
-with '.c' substituted for the final '.f' or '.F'."

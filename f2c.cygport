@@ -1,0 +1,26 @@
+NAME="f2c"
+VERSION=20100827
+RELEASE=1
+CATEGORY="Devel"
+REQUIRES="libf2c-devel"
+SUMMARY="Fortran to C compiler"
+DESCRIPTION="F2c converts Fortran 77 source code to C (or C++) in the current
+directory"
+HOMEPAGE="http://www.netlib.org/f2c/"
+#SRC_URI="ftp://netlib.bell-labs.com/netlib/f2c/src.tar"
+SRC_URI="mirror://debian/pool/main/f/f2c/f2c_${VERSION}.orig.tar.gz"
+SRC_DIR=${NAME}
+PATCH_URI="20100827-Wimplicit-decls.patch"
+
+src_compile() {
+	lndirs
+	cd ${B}/src
+	cygmake -f makefile.u CFLAGS="${CFLAGS}"
+}
+
+src_install() {
+	cd ${B}
+	dobin src/f2c.exe
+	dodoc src/Notice README changes f2c.pdf
+	newman f2c.1t f2c.1
+}

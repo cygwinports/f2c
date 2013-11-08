@@ -1,0 +1,21 @@
+--- origsrc/f2c/src/sysdep.c	2012-02-14 08:33:36.000000000 -0600
++++ src/f2c/src/sysdep.c	2013-11-08 01:25:21.830784600 -0600
+@@ -20,6 +20,7 @@ data or profits, whether in an action of
+ other tortious action, arising out of or in connection with the
+ use or performance of this software.
+ ****************************************************************/
++#include <unistd.h>
+ #include "defs.h"
+ #include "usignal.h"
+ 
+--- origsrc/f2c/src/xsum0.out	2012-02-14 08:33:36.000000000 -0600
++++ src/f2c/src/xsum0.out	2013-11-08 01:47:29.146702700 -0600
+@@ -49,7 +49,7 @@ pread.c	1fbd30ab	17831
+ proc.c	649db52	39174
+ put.c	af0be95	10345
+ putpcc.c	7669b2f	46093
+-sysdep.c	fe71c52a	15893
++sysdep.c	e968f08a	15913
+ sysdep.h	e7826434	2755
+ sysdeptest.c	c92b2d4	408
+ tokens	188b7c5d	733
